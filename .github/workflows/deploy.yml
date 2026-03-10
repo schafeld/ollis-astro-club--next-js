@@ -22,4 +22,6 @@ jobs:
             git pull origin main
             npm ci
             npm run build
-            pm2 restart ollis-astro-club || pm2 start npm --name "ollis-astro-club" -- start
+            pm2 delete ollis-astro-club 2>/dev/null || true
+            pm2 start npm --name "ollis-astro-club" -- start
+            pm2 save
