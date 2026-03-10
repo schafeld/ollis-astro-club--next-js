@@ -1,0 +1,25 @@
+name: Deploy to Ionos VPS
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Deploy via SSH
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          script: |
+            cd /var/www/ollis-astro-club
+            git pull origin main
+            npm ci
+            npm run build
+            pm2 restart ollis-astro-club || pm2 start npm --name "ollis-astro-club" -- start
