@@ -185,6 +185,15 @@ export default function Home() {
                                 </li>
                                 <li>
                                     <a
+                                        href="https://de.aliexpress.com/item/1005009992869357.html?spm=a2g0o.order_list.order_list_main.47.12bb5c5fcmbGus&gatewayAdapt=glo2deu"
+                                        target="_blank"
+                                        rel="noreferrer"
+                                    >
+                                        Mars Erkundungsroboter (ähnlich Perseverance) mit Fernbedienung
+                                    </a>
+                                </li>
+                                <li>
+                                    <a
                                         href="https://de.aliexpress.com/item/1005007169617966.html?spm=a2g0o.productlist.main.1.708d55a1Fr8KSv&algo_pvid=87cff8f1-bec9-4e1a-9baa-c75f0d6eb882&algo_exp_id=87cff8f1-bec9-4e1a-9baa-c75f0d6eb882-0&pdp_ext_f=%7B%22order%22%3A%225987%22%2C%22eval%22%3A%221%22%2C%22orig_sl_item_id%22%3A%221005007169617966%22%2C%22orig_item_id%22%3A%221005006873812338%22%2C%22fromPage%22%3A%22search%22%7D&pdp_npi=6%40dis%21EUR%213.18%211.59%21%21%2125.46%2112.73%21%40211b819117624388983062259eba77%2112000039685734168%21sea%21DE%216170053989%21X%211%210%21n_tag%3A-29919%3Bd%3A233070fc%3Bm03_new_user%3A-29895&curPageLogUid=rHw5H9O3t3F5&utparam-url=scene%3Asearch%7Cquery_from%3A%7Cx_object_id%3A1005007169617966%7C_p_origin_prod%3A1005006873812338"
                                         target="_blank"
                                         rel="noreferrer"
