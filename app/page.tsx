@@ -17,7 +17,7 @@ export default function Home() {
                         />
                         <div>
                             <h1>Astro-Club</h1>
-                            <p className="subtitle">Tipps fuer Sternenfreunde</p>
+                            <p className="subtitle">Tipps für Sternenfreunde</p>
                         </div>
                     </div>
                 </header>
