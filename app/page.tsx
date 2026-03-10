@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import "./page.css";
 
 export default function Home() {
@@ -273,7 +274,7 @@ export default function Home() {
                     <h3>Besondere Features und Spielereien</h3>
                     <div className="kids-list">
                         <div className="kids-item">
-                            <a href="zufallszahlen.html">Hier geht&apos;s zum Astro-Gluecksrad</a>.
+                            <Link href="/zufallszahlen">Hier geht&apos;s zum Astro-Gluecksrad</Link>.
                         </div>
                     </div>
                 </section>
