@@ -24,7 +24,7 @@ export default function Home() {
 
                 <section className="astro-section podcasts">
                     <h2>
-                        Astronomie zum Anhoeren (Podcasts) <span className="emoji">🎧 📻 🌝 ✨</span>
+                        Astronomie zum Anhören (Podcasts) <span className="emoji">🎧 📻 🌝 ✨</span>
                     </h2>
                     <div className="podcast-list">
                         <div className="podcast-item">
@@ -52,16 +52,16 @@ export default function Home() {
                     <h2>
                         Sternkarten <span className="emoji">💻 🗺️ 🌐 ✨ 🔭 🤩</span>
                     </h2>
-                    <h3>Welche Sterne seht ihr gerade? Welche Planeten gibt es z.B. naechsten Monat zu sehen?</h3>
+                    <h3>Welche Sterne seht ihr gerade? Welche Planeten gibt es z.B. nächsten Monat zu sehen?</h3>
                     <div className="app-list">
                         <div className="app-item">
-                            <strong>Stellarium</strong> Web App (laeuft im Browser, kostenlos):
+                            <strong>Stellarium</strong> Web App (läuft im Browser, kostenlos):
                             <a href="https://stellarium-web.org/" target="_blank" rel="noreferrer">
                                 https://stellarium-web.org/
                             </a>
                         </div>
                         <div className="app-item">
-                            👉 Tolle Apps fuer Apple und Android Smartphones: <strong>Star Walk 2</strong>{" "}
+                            👉 Tolle Apps für Apple und Android Smartphones: <strong>Star Walk 2</strong>{" "}
                             <a
                                 href="https://apps.apple.com/de/app/star-walk-2-ads-sternenhimmel/id112481571"
                                 target="_blank"
@@ -85,7 +85,7 @@ export default function Home() {
                     <h2>
                         Weltraum-Videos <span className="emoji">📺 💻 🪐 🚀 🤩</span>
                     </h2>
-                    <h3>ESA fuer Kinder</h3>
+                    <h3>ESA für Kinder</h3>
                     <div className="kids-list">
                         <div className="kids-item">
                             z.B. Praxis Abenteuer:{" "}
@@ -122,7 +122,7 @@ export default function Home() {
                     <div className="kids-list">
                         <div className="kids-item">
                             Die Firma Bresser in Rhede hat dem Astro-Club ein tolles Teleskop gespendet, das ihr euch mal
-                            anschauen koennt:{" "}
+                            anschauen könnt:{" "}
                             <a
                                 href="https://www.bresser.de/p/bresser-messier-ar-102-600-nano-az-teleskop-4702605"
                                 target="_blank"
@@ -132,7 +132,7 @@ export default function Home() {
                             </a>
                         </div>
                         <div className="kids-item">
-                            Falls ihr statt eines Linsenteleskops lieber ein Spiegelteleskop haettet (ihr erinnert euch an die
+                            Falls ihr statt eines Linsenteleskops lieber ein Spiegelteleskop hättet (ihr erinnert euch an die
                             Stunde? 😉), das hier ist{" "}
                             <a
                                 href="https://www.bresser.de/p/bresser-spica-ii-130-1.000-eq3-spiegelteleskop-mit-smartphone-adapter-sonnenfilter-4630100"
@@ -145,13 +145,13 @@ export default function Home() {
                             <a href="https://www.bresser.de/refurbished/" target="_blank" rel="noreferrer">
                                 Bresser in der Refurbished Ecke
                             </a>{" "}
-                            stoebert, findet ihr vielleicht auch ein Schnaeppchen.
+                            stöbert, findet ihr vielleicht auch ein Schnäppchen.
                         </div>
                         <h3>Experimentierzeug - Spielzeug, das Wissen schafft</h3>
                         <div className="kids-item">
                             <p>
-                                Basteln kann man mit allen moeglichen Sachen, alte HelloFresh Kartons, Pralinenschachteln,
-                                Alufolie, transparente Puddingbecher, Korken, Holzstaebchen, Gummibaender, Kleber, Schere, Farben
+                                Basteln kann man mit allen möglichen Sachen, alte HelloFresh Kartons, Pralinenschachteln,
+                                Alufolie, transparente Puddingbecher, Korken, Holzstäbchen, Gummibänder, Kleber, Schere, Farben
                                 usw. Vieles habe ich einfach im 1-Euro-Laden besorgt. Tipp: Gerade in den Monaten vor Weihnachten
                                 gibt es dort sehr viele Sternchen und anderen Glitzerkram zu kaufen.
                             </p>
@@ -274,7 +274,7 @@ export default function Home() {
                     <h3>Besondere Features und Spielereien</h3>
                     <div className="kids-list">
                         <div className="kids-item">
-                            <Link href="/zufallszahlen">Hier geht&apos;s zum Astro-Gluecksrad</Link>.
+                            <Link href="/zufallszahlen">Hier geht&apos;s zum Astro-Glücksrad</Link>.
                         </div>
                     </div>
                 </section>
