@@ -1,0 +1,55 @@
+{
+  "nav": {
+    "home": "Startseite",
+    "news": "News",
+    "info": "Infos",
+    "games": "Spiele",
+    "fun": "Fun",
+    "dashboard": "Mein Bereich",
+    "login": "Anmelden",
+    "logout": "Abmelden"
+  },
+  "home": {
+    "title": "Olli's Astro-Club",
+    "subtitle": "Tipps für Sternenfreunde",
+    "welcome": "Willkommen beim Astro-Club!",
+    "description": "Astronomie AG an der Michaelschule in Groß Reken – Sterne, Planeten, Spiele und mehr!"
+  },
+  "info": {
+    "title": "Astronomie-Infos",
+    "links": "Links & Tipps",
+    "live": "Live-Daten"
+  },
+  "games": {
+    "title": "Spiele",
+    "asteroids": { "title": "Asteroids" },
+    "moonBuggy": { "title": "Moon Buggy" },
+    "moonLander": { "title": "Moon Lander" },
+    "wheelOfFortune": { "title": "Glücksrad" }
+  },
+  "fun": {
+    "title": "Fun",
+    "gallery": "Galerie",
+    "videos": "Videos"
+  },
+  "dashboard": {
+    "title": "Mein Bereich",
+    "bookmarks": "Lesezeichen",
+    "highscores": "Highscores",
+    "images": "Meine Bilder"
+  },
+  "common": {
+    "loading": "Laden...",
+    "error": "Ein Fehler ist aufgetreten.",
+    "backHome": "Zurück zur Startseite",
+    "language": "Sprache",
+    "theme": "Design",
+    "darkMode": "Dunkelmodus",
+    "lightMode": "Hellmodus"
+  },
+  "footer": {
+    "copyright": "© {year} Olli's Astro Club – Astronomie AG an der Michaelschule in Groß Reken",
+    "madeBy": "von Oliver Schafeld",
+    "openSource": "Open Source"
+  }
+}

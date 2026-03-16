@@ -30,11 +30,27 @@ npm run lint     # Run ESLint
 
 ```
 app/                    # Next.js App Router pages and layouts
-  layout.tsx            # Root layout (lang: de)
-  page.tsx              # Homepage — astronomy tips, links, resources
-  globals.css           # Global styles (Tailwind)
-  page.css              # Homepage-specific styles
-  zufallszahlen/        # "Wheel of Fortune" random number feature
+  layout.tsx            # Root layout (fonts, metadata)
+  page.tsx              # Redirect to /de
+  globals.css           # Global styles (Tailwind + design tokens)
+  [locale]/             # i18n locale-aware routes
+    layout.tsx          # Locale layout (nav, footer, providers)
+    page.tsx            # Homepage
+    news/               # Blog section
+    info/               # Info section (links, live data)
+    games/              # Games section
+    fun/                # Fun section (gallery, videos)
+    dashboard/          # Authenticated user area
+  zufallszahlen/        # Legacy wheel of fortune (to migrate)
+components/             # Shared React components
+  ui/                   # Design system primitives (Button, Card, Badge…)
+  layout/               # Header, Footer
+  ThemeProvider.tsx     # Dark/light mode provider
+lib/
+  auth0.ts              # Auth0 v4 client instance (Auth0Client)
+  auth/                 # Auth config helpers (roles, dev dummy)
+  i18n/                 # next-intl routing & request config
+messages/               # i18n translation files (de.json, en.json)
 public/                 # Static assets (logo, SVGs)
 AI_DOCS/                # Planning and design documentation
   TASK.md               # Project requirements and AI task description
@@ -43,6 +59,7 @@ AI_DOCS/                # Planning and design documentation
   CONTENT_PLAN.md       # Content structure and route planning
   TECH_STACK.md         # Detailed tech stack decisions
   ROADMAP.md            # Phased implementation plan
+  DEPLOYMENT.md         # Deployment & API key setup (incl. Ionos VPS)
   NOTES.md              # Human developer notes
 ```
 
@@ -72,13 +89,27 @@ The design follows a **hand-drawn/sketch aesthetic** — see `AI_DOCS/DESIGN.md`
 - **File naming:** kebab-case for routes, PascalCase for components
 - **i18n keys:** Use a flat namespace with dot notation (e.g., `nav.home`, `games.asteroids.title`)
 
+## Auth0 v4 Setup
+
+- Auth0 v4 SDK uses `Auth0Client` from `@auth0/nextjs-auth0/server` (no more `handleAuth()`)
+- Client instance lives in `lib/auth0.ts`
+- When Auth0 is configured, add `auth0.middleware()` to the middleware chain
+- Auth routes are handled automatically at `/auth/login`, `/auth/logout`, `/auth/callback`
+- Currently in dev mode with hardcoded admin dummy (see `lib/auth/config.ts`)
+
 ## Current State
 
-The project is in early development. Existing pages:
-1. **Homepage** (`app/page.tsx`) — Astronomy tips: podcasts, star chart apps, videos, telescopes, excursion tips, links
-2. **Zufallszahlen** (`app/zufallszahlen/page.tsx`) — An animated wheel-of-fortune with space theme
+Phase 0 (Foundation) is complete:
+- Hand-drawn design system with Tailwind tokens
+- i18n (de/en) with next-intl, locale-aware routing
+- Dark/light mode with next-themes
+- UI components: Button, Card, Badge, ThemeToggle, LanguageSwitcher
+- Layout: Header (with mobile nav), Footer
+- All placeholder pages created for planned routes
+- Auth0 v4 SDK installed and configured (dev dummy mode)
 
-These need to be migrated into the new design system and integrated into a proper navigation structure.
+Legacy pages to migrate:
+- **Zufallszahlen** (`app/zufallszahlen/page.tsx`) → `/games/gluecksrad`
 
 ## Important Notes
 
