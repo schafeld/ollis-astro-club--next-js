@@ -31,8 +31,8 @@ To learn more about Next.js, take a look at the following resources:
 
 You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
+## Deploy
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+The [Olli's Astro Club](https:///www.ollis-astro-club.com) website is deployed as [Ionos VPS](https://www.ionos.de/server/vps) virtual cloud server (starting at 1,- € per month).
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+It is currently based on [Next.js](https://nextjs.org/) and [Sanity.io](https://www.sanity.io/docs/nuxt-js-quickstart/setting-up-your-studio).
