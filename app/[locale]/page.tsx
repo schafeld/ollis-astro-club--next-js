@@ -1,13 +1,33 @@
 import Image from 'next/image';
-import { useTranslations } from 'next-intl';
+import { getTranslations, getLocale } from 'next-intl/server';
 import { Card } from '@/components/ui/Card';
 import Link from 'next/link';
-import { useLocale } from 'next-intl';
+import { sanityFetch } from '@/lib/sanity/client';
+import { HOMEPAGE_QUERY } from '@/lib/sanity/queries';
+import { isSanityConfigured } from '@/lib/sanity/env';
 
-export default function HomePage() {
-  const t = useTranslations('home');
-  const tNav = useTranslations('nav');
-  const locale = useLocale();
+export default async function HomePage() {
+  const t = await getTranslations('home');
+  const tNav = await getTranslations('nav');
+  const locale = await getLocale();
+
+  // Fetch CMS content with fallback to i18n messages
+  let title = t('title');
+  let subtitle = t('subtitle');
+  let description = t('description');
+
+  if (isSanityConfigured) {
+    const data = await sanityFetch({
+      query: HOMEPAGE_QUERY,
+      params: { locale },
+      tags: ['homepage'],
+    }) as { title: string | null; subtitle: string | null; description: string | null } | null;
+    if (data) {
+      title = data.title ?? title;
+      subtitle = data.subtitle ?? subtitle;
+      description = data.description ?? description;
+    }
+  }
 
   const sections = [
     { href: `/${locale}/news`, emoji: '📰', label: tNav('news') },
@@ -29,11 +49,11 @@ export default function HomePage() {
           priority
         />
         <h1 className="font-heading text-4xl font-bold text-[var(--foreground)] md:text-5xl">
-          {t('title')}
+          {title}
         </h1>
-        <p className="font-heading text-xl text-[var(--accent)]">{t('subtitle')}</p>
+        <p className="font-heading text-xl text-[var(--accent)]">{subtitle}</p>
         <p className="max-w-lg font-body text-lg text-[var(--foreground)] opacity-80">
-          {t('description')}
+          {description}
         </p>
       </section>
 
