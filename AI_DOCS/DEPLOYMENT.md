@@ -30,36 +30,57 @@ For local development, the Auth0 dummy admin works without real credentials — 
 | `DATABASE_URL` | Later | MySQL connection string for Ionos VPS |
 | `NEXT_PUBLIC_SITE_URL` | Yes | Public site URL |
 
-## Setting Up API Keys on Ionos VPS
+## Pre-Deployment Checklist
+
+Before merging the development branch to `main` and pushing, make sure all environment variables are in place on the server. This only needs to be done **once** (or when new variables are added).
+
+**Required before first deployment:**
+
+- [ ] `AUTH0_SECRET` — generated and set on server
+- [ ] `AUTH0_DOMAIN`, `AUTH0_CLIENT_ID`, `AUTH0_CLIENT_SECRET` — Auth0 app configured
+- [ ] `APP_BASE_URL` set to `https://www.ollis-astro-club.com`
+- [ ] `NEXT_PUBLIC_SITE_URL` set to `https://www.ollis-astro-club.com`
+- [ ] `NEXT_PUBLIC_SANITY_PROJECT_ID` and `NEXT_PUBLIC_SANITY_DATASET` set (if Sanity is active)
+- [ ] `NASA_API_KEY` set (if NASA live data pages are active)
+
+**Important:** `NEXT_PUBLIC_*` variables are embedded into the client-side bundle **at build time**. If you change them, you must rebuild (`npm run build`) and restart PM2 — they are not picked up at runtime.
+
+---
+
+## Setting Up Environment Variables on the Ionos VPS
+
+The app runs as `ollis-astro-club` under PM2 (as user `deploy`) at `/var/www/ollis-astro-club`. Next.js reads `.env.local` automatically from the project root at startup.
 
 ### 1. SSH into the VPS
 
 ```bash
-ssh user@your-ionos-vps-ip
+ssh deploy@www.ollis-astro-club.com
 ```
 
-### 2. Create the environment file
-
-Navigate to the project directory and create the production `.env.local`:
+### 2. Navigate to the project directory
 
 ```bash
-cd /path/to/ollis-astro-club--next-js
+cd /var/www/ollis-astro-club
+```
 
-# Create the env file with restricted permissions (readable only by owner)
+### 3. Create and secure the environment file (first time only)
+
+```bash
 touch .env.local
 chmod 600 .env.local
 ```
 
-### 3. Edit the environment file
+### 4. Edit the environment file
 
 ```bash
 nano .env.local
 ```
 
-Add all production values:
+Paste and fill in all values:
 
 ```bash
 # Auth0 (v4 SDK) — get these from https://manage.auth0.com
+# Generate AUTH0_SECRET with: openssl rand -hex 32
 AUTH0_SECRET=<generate-with-openssl-rand-hex-32>
 AUTH0_DOMAIN=your-tenant.eu.auth0.com
 AUTH0_CLIENT_ID=<your-client-id>
@@ -74,85 +95,43 @@ SANITY_API_TOKEN=<your-read-token>
 # NASA — register at https://api.nasa.gov
 NASA_API_KEY=<your-nasa-api-key>
 
-# MySQL on Ionos VPS
-DATABASE_URL=mysql://user:password@localhost:3306/astro_club
+# MySQL on Ionos VPS (add when database is introduced)
+# DATABASE_URL=mysql://user:password@localhost:3306/astro_club
 
 # App
 NEXT_PUBLIC_SITE_URL=https://www.ollis-astro-club.com
 ```
 
-Save and exit (`Ctrl+O`, `Enter`, `Ctrl+X` in nano).
+Save and exit: `Ctrl+O`, `Enter`, `Ctrl+X`.
 
-### 4. Verify file permissions
+### 5. Verify the file
 
 ```bash
 ls -la .env.local
-# Should show: -rw------- 1 user user ... .env.local
+# Should show: -rw------- 1 deploy deploy ... .env.local
+
+# Verify content (no secrets printed to screen unintentionally):
+grep -c '=' .env.local   # prints number of lines with values
 ```
 
-Only the owner should be able to read the file. This prevents other users on the VPS from seeing your secrets.
+### 6. Rebuild and restart after setting env vars
 
-### 5. Alternative: Use systemd environment files
-
-If running the app as a systemd service, you can store env vars in the service's environment file:
+After creating or changing `.env.local` for the first time, rebuild and restart:
 
 ```bash
-sudo nano /etc/systemd/system/astro-club.service
+npm run build
+pm2 restart ollis-astro-club
+pm2 status  # verify it shows "online"
 ```
 
-```ini
-[Unit]
-Description=Olli's Astro Club Next.js App
-After=network.target
+> **Subsequent deployments** (after `git pull` + `npm run build`) only need `pm2 restart ollis-astro-club` — the `.env.local` file persists on the server and does not need to be recreated.
 
-[Service]
-Type=simple
-User=www-data
-WorkingDirectory=/path/to/ollis-astro-club--next-js
-EnvironmentFile=/path/to/ollis-astro-club--next-js/.env.local
-ExecStart=/usr/bin/node node_modules/.bin/next start -p 3000
-Restart=on-failure
-RestartSec=10
-
-[Install]
-WantedBy=multi-user.target
-```
+### 7. Verify environment variables are loaded
 
 ```bash
-sudo systemctl daemon-reload
-sudo systemctl enable astro-club
-sudo systemctl start astro-club
-```
-
-### 6. Alternative: Use PM2 with ecosystem config
-
-If using PM2 as process manager:
-
-```bash
-npm install -g pm2
-```
-
-Create `ecosystem.config.js` (do **not** commit this file):
-
-```javascript
-module.exports = {
-  apps: [{
-    name: 'astro-club',
-    script: 'node_modules/.bin/next',
-    args: 'start -p 3000',
-    env: {
-      NODE_ENV: 'production',
-    },
-    // PM2 automatically loads .env.local if dotenv is configured,
-    // or you can specify env vars here directly
-  }],
-};
-```
-
-```bash
-pm2 start ecosystem.config.js
-pm2 save
-pm2 startup  # auto-start on reboot
+pm2 show ollis-astro-club      # shows process details
+# Or check that the site works:
+curl -I https://www.ollis-astro-club.com
 ```
 
 ## Security Best Practices
