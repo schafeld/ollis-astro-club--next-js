@@ -1,34 +1,31 @@
-import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
+import type { Metadata } from 'next';
+import { Kalam, Patrick_Hand } from 'next/font/google';
+import './globals.css';
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
+const kalam = Kalam({
+  weight: ['700'],
+  subsets: ['latin'],
+  variable: '--font-kalam',
+  display: 'swap',
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+const patrickHand = Patrick_Hand({
+  weight: ['400'],
+  subsets: ['latin'],
+  variable: '--font-patrick-hand',
+  display: 'swap',
 });
 
 export const metadata: Metadata = {
-  title: "Olli's Astro Club – Astronomie AG an der Michaelschule in Gross Reken",
-  description: "Astronomie AG an der Michaelschule in Gross Reken mit Tipps für Sternenfreunde, Infos zu Teleskopen, Astronomie-Software und vielem mehr. Von Oliver Schafeld gegründet und betrieben.",
+  title: "Olli's Astro Club – Astronomie AG an der Michaelschule in Groß Reken",
+  description:
+    'Astronomie AG an der Michaelschule in Groß Reken mit Tipps für Sternenfreunde, Infos zu Teleskopen, Astronomie-Software und vielem mehr. Von Oliver Schafeld gegründet und betrieben.',
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="de">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
-      </body>
+    <html suppressHydrationWarning>
+      <body className={`${kalam.variable} ${patrickHand.variable} antialiased`}>{children}</body>
     </html>
   );
 }
