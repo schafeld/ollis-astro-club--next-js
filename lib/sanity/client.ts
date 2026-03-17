@@ -33,7 +33,11 @@ export async function sanityFetch<const QueryString extends string>({
 
   return getClient().fetch(query, params, {
     next: {
-      revalidate: tags.length ? false : revalidate,
+      // Before (broken without webhook):
+      // revalidate: tags.length ? false : revalidate,
+
+      // After (time-based fallback, e.g. 60s):
+      revalidate: revalidate,
       tags,
     },
   });
