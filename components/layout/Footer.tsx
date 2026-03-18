@@ -1,7 +1,9 @@
-import { useTranslations } from 'next-intl';
+import { useTranslations, useLocale } from 'next-intl';
+import Link from 'next/link';
 
 export function Footer() {
   const t = useTranslations('footer');
+  const locale = useLocale();
   const year = new Date().getFullYear();
 
   return (
@@ -19,6 +21,13 @@ export function Footer() {
         >
           {t('openSource')}
         </a>
+        {' · '}
+        <Link
+          href={`/${locale}/impressum`}
+          className="text-[var(--accent-blue)] underline hover:text-[var(--accent)]"
+        >
+          {t('impressum')}
+        </Link>
       </p>
     </footer>
   );
