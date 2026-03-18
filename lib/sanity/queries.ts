@@ -55,3 +55,13 @@ export const LINKS_QUERY = defineQuery(`
     emoji
   }
 `);
+
+// ---------------------------------------------------------------------------
+// Impressum (Legal Notice) — singleton
+// ---------------------------------------------------------------------------
+export const IMPRESSUM_QUERY = defineQuery(`
+  *[_type == "impressum"][0]{
+    "title": title[$locale],
+    "body": body[$locale]
+  }
+`);

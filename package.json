@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "sync:studio": "cp lib/sanity/schemas/*.ts ../../Sanity-cms/studio-ollis-astro-club/schemaTypes/"
   },
   "dependencies": {
     "@auth0/nextjs-auth0": "^4.16.0",

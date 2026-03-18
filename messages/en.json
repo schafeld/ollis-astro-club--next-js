@@ -50,6 +50,11 @@
   "footer": {
     "copyright": "© {year} Olli's Astro Club – Astronomy Club at Michaelschule in Groß Reken",
     "madeBy": "by Oliver Schafeld",
-    "openSource": "Open Source"
+    "openSource": "Open Source",
+    "impressum": "Legal Notice"
+  },
+  "impressum": {
+    "title": "Legal Notice (Impressum)",
+    "fallback": "This page is managed by Oliver Schafeld. For more information visit www.schafeld.com."
   }
 }

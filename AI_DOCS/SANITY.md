@@ -163,16 +163,24 @@ This gives you a **Project ID** — note it down.
 
 > **Important:** Without this step the Studio will show **"No document types"** and you won't see any content types in the sidebar.
 
-Copy the 5 schema files from `lib/sanity/schemas/` in this Next.js project into your Sanity Studio's `schemaTypes/` folder:
+> **Schema source of truth:** Schemas live in this Next.js repo under `lib/sanity/schemas/`. Use `npm run sync:studio` whenever you update them.
+
+Use the sync script to copy all schema files to the Studio automatically:
 
 ```bash
 # From the Next.js project root
+npm run sync:studio
+```
+
+Or copy manually if preferred:
+
+```bash
 cp lib/sanity/schemas/localizedString.ts \
    lib/sanity/schemas/localizedBlock.ts \
    lib/sanity/schemas/homepage.ts \
    lib/sanity/schemas/newsPost.ts \
    lib/sanity/schemas/link.ts \
-   /path/to/your-studio/schemaTypes/
+   ../../Sanity-cms/studio-ollis-astro-club/schemaTypes/
 ```
 
 Then **replace** the Studio's schema index. Edit `schemaTypes/index.ts` (the default file contains an empty array):
