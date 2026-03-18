@@ -12,7 +12,7 @@
 - **React:** 19.x with React Server Components
 - **Styling:** Tailwind CSS 4 + hand-drawn design system (see `AI_DOCS/DESIGN.md`)
 - **Auth:** Auth0 (integrated from the start; hardcoded admin dummy for initial dev)
-- **CMS:** Sanity.io headless CMS (fresh project, to be set up)
+- **CMS:** Sanity.io headless CMS — Studio in companion repo at `../../Sanity-cms/studio-ollis-astro-club`
 - **Validation:** Zod (planned)
 - **i18n:** German (primary) + English — language selection persisted
 - **Hosting:** Ionos VPS with MySQL database (fresh, to be set up)
@@ -20,11 +20,38 @@
 ## Key Commands
 
 ```bash
-npm run dev      # Start development server
-npm run build    # Production build
-npm run start    # Start production server
-npm run lint     # Run ESLint
+npm run dev          # Start development server
+npm run build        # Production build
+npm run start        # Start production server
+npm run lint         # Run ESLint
+npm run sync:studio  # Copy schemas → companion Sanity Studio repo
 ```
+
+## Companion Repositories
+
+This Next.js app works in tandem with a separate **Sanity Studio** repository:
+
+- **Studio path:** `../../Sanity-cms/studio-ollis-astro-club` (relative to this repo)
+- **Sanity Project ID:** `f18pduhr` | **Dataset:** `production`
+- **VS Code Workspace:** Open `../../astro-club.code-workspace` to work in both repos simultaneously — this makes `@workspace` searches span both codebases
+
+### Schema Ownership
+
+Schemas are the **source of truth in this repo** (`lib/sanity/schemas/`) and are copied to the Studio's `schemaTypes/` folder. After changing any schema file, run:
+
+```bash
+npm run sync:studio   # Copies lib/sanity/schemas/*.ts → Studio schemaTypes/
+```
+
+### Adding New CMS Content Types
+
+1. Create schema file in `lib/sanity/schemas/`
+2. Export from `lib/sanity/schemas/index.ts`
+3. Run `npm run sync:studio`
+4. Update Studio's `schemaTypes/index.ts` to import and register the new type
+5. Add GROQ query in `lib/sanity/queries.ts`
+6. Create/update the Next.js page to fetch and render the content
+7. Add i18n keys to `messages/de.json` and `messages/en.json` for static fallback
 
 ## Project Structure
 
