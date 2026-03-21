@@ -23,6 +23,12 @@ export default function FunPage() {
             <h2 className="font-heading text-xl font-bold">{t('videos')}</h2>
           </Card>
         </Link>
+        <Link href={`/${locale}/fun/gluecksrad`} className="no-underline">
+          <Card rotate>
+            <span className="text-3xl">🎡</span>
+            <h2 className="font-heading text-xl font-bold">{t('wheelOfFortune.title')}</h2>
+          </Card>
+        </Link>
       </div>
     </div>
   );

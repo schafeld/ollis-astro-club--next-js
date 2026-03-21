@@ -30,7 +30,12 @@
   "fun": {
     "title": "Fun",
     "gallery": "Gallery",
-    "videos": "Videos"
+    "videos": "Videos",
+    "wheelOfFortune": {
+      "title": "Wheel of Fortune",
+      "spin": "Spin!",
+      "maxSectors": "Number of sectors (2–20)"
+    }
   },
   "dashboard": {
     "title": "My Area",

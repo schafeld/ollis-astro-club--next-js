@@ -30,7 +30,12 @@
   "fun": {
     "title": "Fun",
     "gallery": "Galerie",
-    "videos": "Videos"
+    "videos": "Videos",
+    "wheelOfFortune": {
+      "title": "Glücksrad",
+      "spin": "Drehen!",
+      "maxSectors": "Anzahl der Felder (2–20)"
+    }
   },
   "dashboard": {
     "title": "Mein Bereich",
