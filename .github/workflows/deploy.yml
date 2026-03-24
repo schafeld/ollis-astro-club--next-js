@@ -18,6 +18,7 @@ jobs:
           username: ${{ secrets.SSH_USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
+            export NODE_OPTIONS="--max-old-space-size=1024"
             cd /var/www/ollis-astro-club
             pm2 stop ollis-astro-club 2>/dev/null || true
             git pull origin main
