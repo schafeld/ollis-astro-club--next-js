@@ -19,6 +19,7 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
             cd /var/www/ollis-astro-club
+            pm2 stop ollis-astro-club 2>/dev/null || true
             git pull origin main
             npm ci
             npm run build
