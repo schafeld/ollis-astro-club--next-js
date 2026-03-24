@@ -18,7 +18,17 @@
   "info": {
     "title": "Astronomy Info",
     "links": "Links & Tips",
-    "live": "Live Data"
+    "live": "Live Data",
+    "apod": {
+      "title": "NASA Picture of the Day",
+      "date": "Date",
+      "copyright": "Copyright",
+      "error": "Error loading NASA image",
+      "videoNote": "Today's feature is a video!",
+      "externalVideo": "Video cannot be directly embedded",
+      "viewOnNasa": "View video on NASA →",
+      "sourceLink": "View on NASA"
+    }
   },
   "games": {
     "title": "Games",
