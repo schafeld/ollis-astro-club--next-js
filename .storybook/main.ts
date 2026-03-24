@@ -1,0 +1,24 @@
+import type { StorybookConfig } from '@storybook/nextjs-vite';
+
+const config: StorybookConfig = {
+  stories: [
+    '../stories/**/*.mdx',
+    '../stories/**/*.stories.@(js|jsx|mjs|ts|tsx)',
+    '../components/**/*.stories.@(js|jsx|mjs|ts|tsx)',
+  ],
+  addons: [
+    '@chromatic-com/storybook',
+    '@storybook/addon-vitest',
+    '@storybook/addon-a11y',
+    '@storybook/addon-docs',
+    '@storybook/addon-onboarding',
+    '@storybook/addon-themes',
+  ],
+  framework: '@storybook/nextjs-vite',
+  viteFinal: async (config) => {
+    // Set base path for serving from /storybook-static/
+    config.base = '/storybook-static/';
+    return config;
+  },
+};
+export default config;
