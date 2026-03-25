@@ -5,6 +5,17 @@ const withNextIntl = createNextIntlPlugin('./lib/i18n/request.ts');
 
 const nextConfig: NextConfig = {
   /* config options here */
+
+  // Allow remote NASA APOD images used on the live info page.
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'apod.nasa.gov',
+        pathname: '/apod/**',
+      },
+    ],
+  },
   
   // Skip type check during build (runs locally & in CI via npm run lint)
   typescript: {
