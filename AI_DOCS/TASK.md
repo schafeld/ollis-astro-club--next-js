@@ -33,7 +33,7 @@ Probably a microfrontend architecture and/or monorepo should be feasible
 Content:
 
 - Take the already available content from `app/page.tsx` and the wheel of fortune feature from `app/zufallszahlen/page.tsx` and integrate them as separate menu items/ routes.
-- The content should be structured in Astro-Club News (a blog), information (astronomy information, link lists, maybe live information through public APIs from NASA or ESA), games (simple retro style javascript games like asteroids, moon buggy, or moon lander; mobile friendly), fun stuff (images and videos of cardboard UFOs, robots, aliens, astronauts etc.)
+- The content should be structured in Astro Club News (a blog), information (astronomy information, link lists, maybe live information through public APIs from NASA or ESA), games (simple retro style javascript games like asteroids, moon buggy, or moon lander; mobile friendly), fun stuff (images and videos of cardboard UFOs, robots, aliens, astronauts etc.)
 
 **AI Task:**
 Create planning documents to outline this website's concept in the folder `/AI_DOCS` (create a separate `CLAUDE.md` in the root folder if that is a best practice for Claude Code agentic development). Create documents that will serve as context for future development with generative/agentic AI and as documentation for users and developers.

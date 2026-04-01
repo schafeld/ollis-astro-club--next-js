@@ -10,9 +10,9 @@
     "logout": "Abmelden"
   },
   "home": {
-    "title": "Olli's Astro-Club",
+    "title": "Ollis Astro Club",
     "subtitle": "Tipps für Sternenfreunde",
-    "welcome": "Willkommen beim Astro-Club!",
+    "welcome": "Willkommen beim Astro Club!",
     "description": "Astronomie AG an der Michaelschule in Groß Reken – Sterne, Planeten, Spiele und mehr!"
   },
   "info": {
@@ -63,7 +63,7 @@
     "lightMode": "Hellmodus"
   },
   "footer": {
-    "copyright": "© {year} Olli's Astro Club – Astronomie AG an der Michaelschule in Groß Reken",
+    "copyright": "© {year} Ollis Astro Club – Astronomie AG an der Michaelschule in Groß Reken",
     "madeBy": "von Oliver Schafeld",
     "openSource": "Open Source",
     "impressum": "Impressum"

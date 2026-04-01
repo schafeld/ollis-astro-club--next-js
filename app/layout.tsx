@@ -17,7 +17,7 @@ const patrickHand = Patrick_Hand({
 });
 
 export const metadata: Metadata = {
-  title: "Olli's Astro Club – Astronomie AG an der Michaelschule in Groß Reken",
+  title: "Ollis Astro Club – Astronomie AG an der Michaelschule in Groß Reken",
   description:
     'Astronomie AG an der Michaelschule in Groß Reken mit Tipps für Sternenfreunde, Infos zu Teleskopen, Astronomie-Software und vielem mehr. Von Oliver Schafeld gegründet und betrieben.',
 };

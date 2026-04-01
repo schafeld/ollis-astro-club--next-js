@@ -73,7 +73,7 @@ export default async function NewsPage() {
         <Card>
           <p className="font-body text-lg opacity-70">
             {locale === 'de'
-              ? 'Hier erscheinen bald Neuigkeiten vom Astro-Club! 🚀'
+              ? 'Hier erscheinen bald Neuigkeiten vom Astro Club! 🚀'
               : 'News from the Astro Club coming soon! 🚀'}
           </p>
         </Card>

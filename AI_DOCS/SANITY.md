@@ -27,8 +27,8 @@ Each document in Sanity stores content in **both languages** using custom `local
 
 ```
 title: {
-  de: "Willkommen beim Astro-Club!",
-  en: "Welcome to the Astro Club!"
+  de: "Willkommen bei Ollis Astro Club!",
+  en: "Welcome to Olli's Astro Club!"
 }
 ```
 
@@ -101,7 +101,7 @@ For **server-side** operations (mutations, tokens), refer to the existing `SANIT
 
 | Field | Type | Description |
 |-------|------|-------------|
-| `title` | localizedString | Main heading ("Olli's Astro-Club") |
+| `title` | localizedString | Main heading ("Ollis Astro Club") |
 | `subtitle` | localizedString | Subtitle ("Tipps für Sternenfreunde") |
 | `description` | localizedString | Description paragraph |
 
@@ -243,7 +243,7 @@ Open http://localhost:3333 to access Sanity Studio.
 2. Click **Homepage** in the left sidebar
 3. Click **+ Create** (or edit the existing document)
 4. Fill in the fields:
-   - **Title** → 🇩🇪 "Ollis Astro-Club" / 🇬🇧 "Olli's Astro Club"
+   - **Title** → 🇩🇪 "Ollis Astro Club" / 🇬🇧 "Olli's Astro Club"
    - **Subtitle** → 🇩🇪 "Tipps für Sternenfreunde" / 🇬🇧 "Tips for Stargazers"
    - **Description** → 🇩🇪 "Astronomie AG an der Michaelschule..." / 🇬🇧 "Astronomy Club at Michaelschule..."
 5. Click **Publish**

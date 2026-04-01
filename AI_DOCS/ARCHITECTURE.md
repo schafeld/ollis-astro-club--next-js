@@ -35,7 +35,7 @@ app/
   [locale]/                  # i18n: /de/... and /en/...
     layout.tsx               # Locale-aware root layout
     page.tsx                 # Homepage
-    news/                    # Astro-Club News (blog)
+    news/                    # Ollis Astro Club News (blog)
       page.tsx               # Blog listing
       [slug]/page.tsx        # Individual blog post
     info/                    # Information section

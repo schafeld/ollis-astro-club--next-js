@@ -4,7 +4,7 @@
 
 ## Project Overview
 
-**Olli's Astro Club** (`www.ollis-astro-club.com`) — A fun astronomy and space website for kids (3rd grade+) and all ages. Run as an astronomy club ("Astronomie AG") at Michaelschule in Groß Reken, Germany, by Oliver Schafeld.
+**Ollis Astro Club** (`www.ollis-astro-club.com`) — A fun astronomy and space website for kids (3rd grade+) and all ages. Run as an astronomy club ("Astronomie AG") at Michaelschule in Groß Reken, Germany, by Oliver Schafeld.
 
 ## Tech Stack
 

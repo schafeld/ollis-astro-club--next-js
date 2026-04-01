@@ -5,7 +5,7 @@
 ```
 Astro-Club
 ├── Home (/)
-├── News (/news)                    ← Astro-Club Blog
+├── News (/news)                    ← Ollis Astro Club Blog
 ├── Infos (/info)                   ← Astronomy Information
 │   ├── Links (/info/links)         ← Curated link lists
 │   └── Live (/info/live)           ← Live NASA/ESA data
@@ -29,7 +29,7 @@ All routes are prefixed with `[locale]` (e.g., `/de/news`, `/en/news`).
 
 ### 1. Home
 
-The landing page introduces the Astro-Club with a playful, inviting design.
+The landing page introduces the Astro Club with a playful, inviting design.
 
 **Content:**
 - Hero section with logo and tagline ("Tipps für Sternenfreunde")
@@ -39,7 +39,7 @@ The landing page introduces the Astro-Club with a playful, inviting design.
 
 **Source:** Static + Sanity (featured post) + NASA API (APOD).
 
-### 2. Astro-Club News (Blog)
+### 2. Astro Club News (Blog)
 
 A blog for astronomy club news, event recaps, and educational articles.
 
