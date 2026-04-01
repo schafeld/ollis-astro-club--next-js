@@ -14,7 +14,7 @@ export const homepage = defineType({
       name: 'title',
       title: 'Title',
       type: 'localizedString',
-      description: 'Main heading on the homepage (e.g. "Olli\'s Astro-Club")',
+      description: 'Main heading on the homepage (e.g. "Olli\'s Astro Club")',
     },
     {
       name: 'subtitle',
