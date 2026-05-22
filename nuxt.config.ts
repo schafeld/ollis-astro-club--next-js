@@ -73,6 +73,24 @@ export default defineNuxtConfig({
             'Astronomie AG an der Michaelschule in Gross Reken mit Tipps fuer Sternenfreunde, Infos zu Teleskopen, Astronomie-Software und vielem mehr. Von Oliver Schafeld gegruendet und betrieben.',
         },
       ],
+      link: [
+        {
+          rel: 'icon',
+          type: 'image/x-icon',
+          href: '/favicon.ico',
+        },
+        {
+          rel: 'icon',
+          type: 'image/png',
+          sizes: '32x32',
+          href: '/favicon-32x32.png',
+        },
+        {
+          rel: 'apple-touch-icon',
+          sizes: '180x180',
+          href: '/apple-touch-icon.png',
+        },
+      ],
     },
   },
   colorMode: {
